@@ -1,19 +1,27 @@
 img{
     max-width: 100%;
     display: block;
-    /* width: auto; */
-    /* height: auto; */
+    max-height: 140px;
+    /* transform: translate(0, 20%); */
 }
 
+.mg-contents{
+    background-image: url('images/thepark.jpg');
+}
 .mg-tile{
-    height: 300px;
+    height: 150px;
+    /* width: 10%; */
     perspective: 500px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: inline-block;
+    margin-top: 20px;
+    background-color: white;
+
 }
 
 .mg-tile-inner{
-    width: 300px;
+    width: 100px;
+    height: 150px;
     position: relative;
     transform-style: preserve-3d;
     transition: all .5s ease;
@@ -29,17 +37,27 @@ img{
 
 .mg-tile-front{
     transform: rotateY(180deg);
-    width: 250px;
-    height: 300px;
-}
-
-.mg-tile-back{
-    background: url('images/mordecai.png') no-repeat;
-    width: 250px;
-    height: 300px;
+    width: 100px;
+    height: 150px;
     background-size: contain;
 }
 
-.flip{
+.mg-tile-back{
+    background: url('images/regularshow.jpg') no-repeat;
+    width: 100px;
+    height: 150px;
+    background-size: contain;
+    background-position: center;
+}
+
+.mg-tile-inner.flip{
     transform: rotateY(-180deg);
+}
+
+.background-clear{
+    background-color: transparent;
+}
+
+.matched{
+    background-color: #bcffcc;
 }
