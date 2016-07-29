@@ -1,12 +1,22 @@
-img{
+/* body{
+    height: 100vh;
+} */
+
+.mg-tile-front img{
     max-width: 100%;
     display: block;
-    max-height: 140px;
+    max-height: 150px;
+    -webkit-filter: drop-shadow(16px 0px 4px #222);
+    filter: drop-shadow(16px 0px 4px #222);
     /* transform: translate(0, 20%); */
 }
 
-.mg-contents{
+.container{
+    /* margin: auto; */
     background-image: url('images/thepark.jpg');
+    background-size: cover;
+    /* height: 100vh; */
+    /* background-size: 100% 100%; */
 }
 .mg-tile{
     height: 150px;
@@ -14,9 +24,22 @@ img{
     perspective: 500px;
     /* border: 2px solid black; */
     display: inline-block;
-    margin-top: 20px;
-    background-color: white;
+    margin: 10px 0px;
+}
+.mg-contents-left{
+/*     background-color: transparent;
+    background-image: url('images/thepark-left.jpeg');
+    background-size: cover;
+    margin: auto;
+    height: 100vh; */
+}
 
+.mg-contents-right{
+/*     background-color: transparent;
+    background-image: url('images/thepark-right.jpeg');
+    background-size: cover;
+    margin: auto;
+    height: 100vh; */
 }
 
 .mg-tile-inner{
@@ -31,15 +54,16 @@ img{
     position: absolute;
     top: 0;
     left: 0;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     backface-visibility: hidden;
 }
 
 .mg-tile-front{
     transform: rotateY(180deg);
-    width: 100px;
-    height: 150px;
     background-size: contain;
+    max-width: 100%;
+    display: block;
+    max-height: 150px;
 }
 
 .mg-tile-back{
@@ -48,6 +72,7 @@ img{
     height: 150px;
     background-size: contain;
     background-position: center;
+    /* box-shadow: -5px 5px 5px; */
 }
 
 .mg-tile-inner.flip{
@@ -57,7 +82,33 @@ img{
 .background-clear{
     background-color: transparent;
 }
-
-.matched{
-    background-color: #bcffcc;
-}
+   
+@-webkit-keyframes flash {
+    0% {
+        background-color: #bcffcc;
+        opacity: 0.5;
+        border-radius: 20%;
+    }
+    20% {
+        background-color: #efffbc;
+        border-radius: 50%;
+    }
+    40% {
+        background-color: #ccbcff;
+        opacity: 0.5;
+        border-radius: 10%;
+    }
+    60% {
+        background-color: #ffbcef;
+        border-radius: 50%;
+    }
+    100% {
+        background-color: transparent;
+    }
+} 
+.matched {
+    -webkit-animation-name: flash;
+    -webkit-animation-duration: 2000ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+} 
