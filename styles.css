@@ -1,0 +1,45 @@
+img{
+    max-width: 100%;
+    display: block;
+    /* width: auto; */
+    /* height: auto; */
+}
+
+.mg-tile{
+    height: 300px;
+    perspective: 500px;
+    border: 2px solid black;
+    display: inline-block;
+}
+
+.mg-tile-inner{
+    width: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all .5s ease;
+}
+
+.mg-tile-front, .mg-tile-back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid red;
+    backface-visibility: hidden;
+}
+
+.mg-tile-front{
+    transform: rotateY(180deg);
+    width: 250px;
+    height: 300px;
+}
+
+.mg-tile-back{
+    background: url('images/mordecai.png') no-repeat;
+    width: 250px;
+    height: 300px;
+    background-size: contain;
+}
+
+.flip{
+    transform: rotateY(-180deg);
+}

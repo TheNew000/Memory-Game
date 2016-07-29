@@ -1,0 +1,40 @@
+<style type="text/css" media="screen">
+    #cube{
+        perspective: 100px;
+        border: 1px solid black;
+        width: 200px;
+        margin: auto;
+        margin-top: 200px;
+        margin-left: 10px;
+    } 
+
+    #red-square{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        /* transform: rotateZ(45deg); */
+        transition: all 10s ease;
+    }
+    .flip{
+        transform: rotateX(1080deg) /* rotateY(180deg) */ rotateZ(1080deg) /* skew(360deg, 360deg) */;
+        transform-origin: 500% -500%;
+        margin-left: 900px;
+/*         transform: rotateY(45deg);
+        transform: rotateZ(45deg); */
+    }
+</style>
+
+<div id="cube">
+    <div id="red-square"></div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#red-square').click(function(){
+            console.log('you clicked on red square');
+            $('#red-square').toggleClass('flip');
+        });
+    });
+</script>
